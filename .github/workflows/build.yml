@@ -1,0 +1,33 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Create basic Gradle structure & Build APK
+        run: |
+          mkdir -p app/src/main/java/com/example/babymonitor
+          mkdir -p app/src/main/res/layout
+          
+          if [ -f "AndroidManifest.xml" ]; then cp AndroidManifest.xml app/src/main/; fi
+          if [ -f "activity_main.xml" ]; then cp activity_main.xml app/src/main/res/layout/; fi
+          if [ -f "MainActivity.kt" ]; then cp MainActivity.kt app/src/main/java/com/example/babymonitor/; fi
+          
+          echo "android.useAndroidX=true" > gradle.properties
+          echo "android.enableJetifier=true" >> gradle.properties
