@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#F5F7FA"
+    android:layoutDirection="rtl">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🍼 رادار بكاء الطفل"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        android:layout_marginBottom="24dp"/>
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="أدخل رقم الهاتف للاتصال به"
+        android:inputType="phone"
+        android:padding="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvThresholdLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="حساسية التقاط الصوت: متوسطة"
+        android:textSize="16sp"
+        android:textColor="#34495E"
+        android:layout_marginBottom="8dp"/>
+
+    <SeekBar
+        android:id="@+id/sbSensitivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/tvSoundLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="مستوى الصوت الحالي: 0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#16A085"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="الحالة: متوقف"
+        android:textSize="18sp"
+        android:textColor="#7F8C8D"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnToggle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="بدء المراقبة"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#27AE60"/>
+
+</LinearLayout>
