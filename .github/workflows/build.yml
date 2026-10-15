@@ -19,6 +19,8 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          accept-license: true
 
       - name: Create basic Gradle structure & Build APK
         run: |
